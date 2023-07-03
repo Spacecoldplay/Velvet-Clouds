@@ -1,0 +1,635 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:regular,italic,500,500italic,700,700italic);
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+}
+*,*::before,*::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{
+    outline: none;
+}
+a:focus,a:active{
+    outline: none;
+}
+nav,footer,header,aside{
+    display: block;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+input,button,textarea{
+    font-family: inherit;
+}
+input::-ms-clear{
+    display: none;
+}
+button{
+    cursor: pointer;
+}
+button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+a,a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img{
+    vertical-align: top;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: inherit;
+    font-weight: 400;
+}
+:root {
+    --container--width: 1320px;
+    --text--color: #ffffff;
+    --content--container: 1110px
+}
+/*                  Header                   */
+body {
+    font-family: "DM Sans";
+    background-color: #343434;
+    color: var(--text--color);
+}
+.header {
+    max-width: 100%;
+    height: 100vh;
+    background-image: url(../images/Image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.header::before{
+    content: "";
+    background-image: url(../images/Pattern1.png);
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+.header:after{
+    content: "";
+    background-image: url(../images/Pattern2.png);
+    background-position: left 0 bottom 0;
+    position: absolute;
+    bottom: -3%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    
+}
+.header_container {
+    max-width: var(--container--width);
+    padding: 0 15px;
+    margin: 0 auto;
+    z-index: 3;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-menu {
+    z-index: 3;
+    display: flex;
+}
+.navbar_menu_link {
+    padding-right: 25px;
+    color: var(--text--color);
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: ease-in 0.1s ;
+}
+.navbar_menu_link:hover {
+
+    color: #00FF85;
+}
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+.burger span {
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: #fff;
+}
+.burger::before, .burger::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+.burger::before {
+    top: 0;
+}
+.burger::after{
+    bottom: 0;
+}
+.burger.active span {
+    transform: scale(0);
+}
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::after {
+    top: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+.navbar_menu_socials {
+    z-index: 3;
+}
+.navbar_menu_socials img{
+    transition: ease-out 0.2s;
+    padding-right: 10px;
+}
+.navbar_menu_socials img:hover{
+    transform: scale(1.1);
+}
+.header_menu_wrapper {
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.header_menu {
+    color: var(--text--color);
+    position: relative;
+    text-transform: uppercase;
+}
+.header_menu::before{
+    content: "";
+    height: 200px;
+    width: 230px;
+    position: absolute;
+    background-image: url(../images/Logo.png);
+    background-repeat: no-repeat;
+    top: -110px;
+    left: -125px;
+    
+}
+.header_title {
+    font-size: 53px;
+    font-weight: medium;
+    line-height: 86%;
+}
+.header_name {
+    font-size: 160px;
+    font-weight: 400;
+    line-height: 86%;
+    text-transform: none;
+}
+.header_date {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 110%;
+}
+.header_adress {
+    font-size: 28px;
+    font-weight: 100;
+    line-height: 110%;
+    margin-bottom: 20px;
+}
+.buttons {
+    display: flex;
+}
+.header_btn {
+    color: #343434;
+    text-justify: center;
+    text-align: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: ease-out 0.2s;
+}
+.header_btn:hover {
+    transform: scale(1.1);
+
+}
+.green {
+    background-color: #00FF85;
+}
+/*              header end               */
+
+/* section info  */
+.info {
+    margin: 140px 0 100px;
+    color: var(--text--color);
+}
+.section_container {
+    display: flex;
+    max-width: var(--content--container);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section_info_wrapper {
+    display: flex;
+}
+.info_image {
+    padding-right: 40px;
+}
+.info_text {
+
+
+}
+.info_title {
+    font-size: 48px;
+    font-weight: 200;
+    line-height: 110%;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+.info_subtitle {
+    font-size: 20px;
+    line-height: 140%;
+    font-weight: 100;
+}
+.info_subtitle:not(:last-child) {
+    margin-bottom: 20px;
+}
+/* INFO END */
+
+/* ARROWS */
+.right_arrows {
+    background-image: url(../images/Vector.png);
+    height: 180px;
+    margin-bottom: 100px;
+    background-repeat: repeat-X;
+}
+/* ARROWS END */
+
+/* SCHEDULE */
+.schedule {
+    margin-bottom: 100px;
+    
+}
+.section_schedule_wrapper {
+    width: 100%;
+    display: flex;
+}
+.info_image {
+}
+.schedule_tickets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.tickets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tickets_title{
+    display: block;
+    font-size: 28px;
+    font-weight: 50;
+    padding: 15px;
+
+
+}
+
+.bold {
+    font-weight: bold;
+}
+.tickets_btn {
+    padding: 15px 45px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: ease-out 0.2s;
+}
+.tickets_btn:hover {
+    background-color: #00FF85;
+    transform: scale(1.1);
+}
+.line {
+    width: 100%;
+}
+/* SCHEDULE END */
+/* section image */
+.section_image img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+}
+.schedule_image {
+    padding-right: 40px;
+}
+/* form */
+.contact {
+    margin-bottom: 100px;
+}
+.section_contact_wrapper {
+    display: flex;
+}
+.image {
+    padding-right: 100px;
+}
+.secton_contact_form {
+    max-width: 750px;
+}
+.section_contact_title {
+    font-size: 20px;
+    line-height: 140%;
+    margin-bottom: 20px;
+}
+.form {
+    width: 100%;
+}
+.form p {
+    padding-bottom: 10px;
+}
+.fullname {
+}
+.Email {
+}
+.Number {
+}
+.Message {
+}
+.form_btn {
+    padding: 15px 45px;
+    border-radius: 4px;
+    transition: ease-out 0.2s;
+}
+.form_btn:hover {
+    transform: scale(1.1);
+}
+.form input,textarea {
+    width: 100%;
+    background-color: #434343;
+    margin-bottom: 30px;
+    resize: none;
+    padding: 10px;
+}
+.velvet_link {
+    color: var(--text--color);
+    text-decoration: underline;
+}
+.form input:focus {
+    padding: 10px;
+    color: var(--text--color);
+
+}
+textarea:focus {
+    color: var(--text--color);
+
+}
+.form input {
+    height: 40px;
+}
+
+/* footer */
+.footer {
+    background-color: #1d1d1d;
+    position: relative;
+    text-align: center;
+}
+.footer::before{
+    content: "";
+    background-image: url(../images/Pattern3.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer_container {
+    max-width: var(--container--width);
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+.footer_wrapper {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+.footer_wrapper img:nth-child(1),
+.footer_wrapper img:nth-child(4){
+display: none;
+}
+.footer_wrapper img {
+    z-index: 2;
+}
+.footer_text {
+    padding-bottom: 5px;
+}
+.pattern3 {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+@media(max-width: 800px) {
+    .header_menu::before{
+        display: none;
+        
+    }
+    
+}
+@media (max-width: 636px) {
+    .header_title {
+        font-size: 33px;
+    }
+    .header_name {
+        font-size: 98px;
+
+    }
+    .header_date {
+        font-size: 22.5px;
+        font-weight: bold;
+        line-height: 110%;
+    }
+    .header_adress {
+        font-size: 22.5px;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+    .header_btn {
+        width: 100%;
+    }
+    .section_info_wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .info_image {
+        background-image: url(../images/INFO-smal.png);
+        width: 135px;
+        height: 65px;
+        background-repeat: no-repeat;
+        padding: 0;
+    }
+    .info_image img {
+        display: none;
+    }
+    .info_title {
+        font-size: 32px;
+    }
+    .info_subtitle {
+        font-size: 18px;
+    }
+    .section_schedule_wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .schedule_tickets {
+
+
+    }
+    .schedule_image {
+        background-image: url(../images/SCHEDULE-small.png);
+        width: 305px;
+        height: 65px;
+        background-repeat: no-repeat;
+        padding: 0;
+    }
+    .schedule_image img {
+        display: none;
+        
+    
+
+    }
+    .tickets {
+        display: flex;
+        flex-direction: column;
+    }
+    .tickets_title{
+        display: block;
+        align-self: flex-start;
+        font-size: 21px;
+    }
+    .tickets_btn {
+        width: 100%;
+        margin-bottom: 15px;
+        
+    }
+    
+    .contact {
+    }
+    .section_container {
+    }
+    .section_contact_wrapper {
+        flex-direction: column;
+    }
+    .right_arrows {
+        display: none;
+    }
+    .image { 
+            background-image: url(../images/CONTACT-small.png);
+            width: 280px;
+            height: 65px;
+            background-repeat: no-repeat;
+            padding: 0;
+    }
+    .image img {
+        display: none;
+    }
+    .secton_contact_form {
+    }
+    .section_contact_title {
+    }
+    .velvet_link {
+    }
+    .form {
+    }
+    .fullname {
+    }
+    .Email {
+    }
+    .Number {
+    }
+    .Message {
+    }
+    .form_btn {
+        width: 100%;
+    }
+    
+
+}
+@media (max-width: 465px) {
+    .burger {
+        margin: 20px;
+        display: flex;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: #1d1d1d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 50px;
+        transition: ease-in-out 0.3s;
+    }
+    .navbar-menu.active {
+        left: 0;
+    }
+    .navbar_menu_link {
+        font-size: 25px;
+    }
+    .navbar_menu_socials {
+        display: none;
+    }
+    .footer_wrapper img:nth-child(2),
+    .footer_wrapper img:nth-child(3){
+        display: none;
+    }
+    .footer_wrapper img:nth-child(1),
+    .footer_wrapper img:nth-child(4){
+        display: block;
+    }
+    
+    
+}
+
+
+
